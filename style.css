@@ -1,0 +1,266 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+        
+@font-face {
+    font-family: 'idroid';
+    src: url('itens/fontes/idroid.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*  Tudo que aprendemos de novo:
+
+Variáveis..
+:root
+ #64E8C3
+ #5FDBB8
+ #439C82
+ #3A5C37
+ #275C4D
+ #E7CFCD
+
+line-height..
+Serve para espaçamento entre linhas
+
+max-width e min-width..
+Para colocar limite no aumento e na diminuição da largura
+
+white-space: nowrap..
+Para não existir quebra de linhas
+
+transition-duration..
+Tempo de duração para ir ao hover
+
+list-style-type: '\2714\0020\0020';..
+Escolher o estilo da lista. 
+U+2714 é um emoji, no caso tem que ser escrito \2714.
+0020 são espaçamentos apenas.
+
+columns..
+Define a quantidade de colunas separadas igualmente (ou quase)
+
+list-style-position: inside;..
+Faz os marcadores ficarem na parte interna do contêiner que contém a lista
+
+position: absolute;..
+
+
+position: relative;..
+*/
+
+:root {
+    --background: #E7CFCD;
+    --claro: #64E8C3;
+    --claromedio: #5FDBB8;
+    --medio: #439C82;
+    --medioescuro: #3A5C37;
+    --escuro: #275C4D;
+
+    --fonte-padrao: arial, verdana, helvetica, sans-serif;
+    --fonte-destaque: 'Bebas Neue', serif; 
+    --fonte-idroid: 'idroid', serif;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    display: block;
+    background-color: /*#F8F1FF*/ /*#E7CFCD*/ var(--background);
+    margin: 0;
+    min-width: 300px;
+    max-width: 100%;
+}
+
+header {
+    background-image: linear-gradient(to bottom, var(--claro), var(--escuro));
+    padding-top: 40px;
+    color: #FFFFFF;
+    text-align: center;
+    min-height: 150px;
+    box-shadow: 0px 7px 7px 0px rgba(0, 0, 0, 19%);
+}
+
+header > h1 {
+    font: normal 48px var(--fonte-destaque);
+    color: #FFFFFF;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.322);
+    white-space: nowrap;
+}   
+
+header > p {
+    font: normal 19px var(--fonte-padrao);
+    min-width: 300px;
+    max-width: 630px;
+    margin: auto;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.32);
+    padding-bottom: 50px;
+    text-align: center;
+}
+
+nav {
+    margin: auto;
+    text-align: left;
+    padding: 10px;
+    background-color: var(--escuro);
+}
+
+nav > a {
+    font: normal bold 16px var(--fonte-padrao);
+    color: var(--claro);
+    padding: 10px;
+    border-radius: 5px;
+    transition-duration: 0.5s;
+}
+
+nav > a:hover {
+    color: var(--escuro);
+    background-color: var(--claromedio);
+}
+
+main {
+    background-color: white;
+    min-width: 300px;
+    max-width: 1000px;
+    margin: auto;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.42);
+    font: normal 16px var(--fonte-padrao); 
+    padding: 20px;
+    border-radius: 0px 0px 10px 10px;
+}
+
+main img {
+    width: 100%;
+}
+
+main a {
+    background-color: var(--claro);
+    padding: 2px 6px;
+}
+
+main a:hover {
+    color: #357562;
+    text-decoration: underline;
+}
+
+main a::after {
+    content: '\00A0\🔗';
+}
+
+article {
+    margin: auto;
+}
+
+article > h1 {
+    font: normal lighter 1.8em var(--fonte-idroid);
+    color: var(--escuro);
+    margin: auto;
+}
+
+article > h2 {
+    font: normal normal 1.3em var(--fonte-idroid);
+    background-image: linear-gradient(to right, var(--claro), white);
+    color: #275C4D;
+    margin: auto;
+    text-indent: 0.4em;
+}
+
+.text{
+    text-indent: 30px;
+    line-height: 2em;
+}
+
+div.img {
+    width: 100%;
+}
+
+img.larga {
+    width: 100%;
+}
+
+
+img#imgbug {
+    max-width: 350px;    
+    display: block;
+    margin: auto;
+}
+
+#ytb {
+    position: relative;
+    margin: auto -20px 30px -20px;
+    background-color: var(--escuro);
+    padding: 20px;
+    padding-bottom: 56.5%;
+
+}
+
+iframe {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;;
+}
+
+aside {
+    background-color: var(--claro);
+    border-radius: 10px;
+    box-shadow: 3px 3px 8px 0px rgb(0 0 0 / 28%);
+    padding: 10px;
+}
+
+aside > h3 {
+    background-color: var(--medio);
+    border-radius: 10px 10px 0px 0px;
+    color: white;
+    font: normal bold 19px var(--fonte-padrao);
+    padding: 10px;
+    margin: -10px -10px 0px -10px; 
+}
+
+ul {
+    list-style-type: '\2714\00A0\00A0';
+    columns: 2;
+    list-style-position: inside;
+}
+
+#resto {
+    background-color: white;
+}
+
+footer {
+    background-color: var(--escuro);
+    color: white;
+    font: normal normal 13px var(--fonte-padrao);
+    text-align: center;
+    margin: 30px auto auto auto;
+    padding: 5px;
+}
+
+p {
+    margin: 15px auto 15px auto;
+    text-align: justify;
+}
+
+a {
+    text-decoration: none;
+    color: var(--escuro);
+    font-weight: bold;
+}
+
+strong {
+    color: var(--escuro);
+}
+
+strong.diferente{
+    color: white;
+}
+
+strong.diferente:hover {
+    color: var(--claro);
+    text-decoration: underline;
+}
